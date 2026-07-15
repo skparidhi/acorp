@@ -6,9 +6,6 @@
 		<title>Additiv Corp.</title>
 		<meta name="keywords" content="">
 		<meta name="description" content="">
-        
-      
-        
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +22,8 @@
 		<link rel="stylesheet" href="css/jquery.fullPage.css">
 		<!-- custom -->
 		<link rel="stylesheet" href="css/templatemo-style.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 		<style>
 			/* width */
 			::-webkit-scrollbar {
@@ -50,90 +49,100 @@
 	<body>
 
 	<div id="fullpage">
+		<!--Navbar-->
+		<nav>
+			<!-- Checkbox for toggling menu -->
+			<input type="checkbox" id="check">
+			<!-- Menu icon -->
+			<label for="check" class="checkbtn">
+			<i class="fas fa-bars"></i>
+			</label>
+			<!-- Site logo -->
+			<label class="logo">Additiv Corp.</label>
+			<!-- Navigation links -->
+			<ul>
+			<li><a class="active" href="#">Home</a></li>
+			<li><a href="#work">Products</a></li>
+			<li><a href="#about">Services</a></li>
+			<li><a href="#portfolio">Explore</a></li>
+			<li><a href="#schedule">Schedule an Appointment</a></li>
+			<li><a href="#faq">FAQ</a></li>
+			<li><a href="#contact">Contactus</a></li>
+			</ul>
+		</nav>
 
-		<!-- start home -->
+<!-- start home -->
 		<div id="home" class="section">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-2"></div>
 					<div class="col-md-8 wow fadeIn" data-wow-delay="0.9s">
-						<h3>Estd. 2025</h3>
 						<h1><img src="images/acorp.png"></h1>
-						<h2 class="rotate">DESIGN, PROTOTYPE, MANUFACTURE</h2>
-						<p>Redefining Future</p>
-						<a href="download/Additiv Corp Brochure.pdf" class="btn btn-default smoothScroll wow fadeInUp" data-wow-delay="1s" download="ACorp_Brochure.pdf">BROCHURE</a>
+						<h2>Additiv Corp.</h2>
+						   <a href="https://wetransfer.com?to=hello@additivcorp.co.in" target="_blank" class="btn btn-default wow fadeInUp" data-wow-delay="1s">Upload DICOM</a>
 					</div>
 					<div class="col-md-2"></div>
 				</div>
 			</div>
 		</div>
-		<!-- end home -->
+<!-- end home -->
 
-		<!-- start work -->
-		<div id="work" class="section">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 wow bounce">
-						<h2>WINGS IN ADDITIV CORP.</h2>
-					</div>
-                </div>  
-                
-                <div class="row">
-					<div class="col-md-4 col-xs-11 wow fadeInUp" data-wow-delay="0.6s">
-						<div class="media">
-							<div class="media-object media-left">
-								
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading">Product Development</h3>
-								<p>Design thinking plays a crucial role in Product Development. We at Additiv Corp. help you ideate creatively, conceiving your thoughts to reality</p>
-							</div>
-						</div>
-					</div>
-                    
-					<div class="col-md-4 col-xs-11 wow fadeInUp" data-wow-delay="0.6s">
-						<div class="media">
-							<div class="media-object media-left">
-								
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading">Aerospace & Defence</h3>
-								<p>We concentrate on developing products for A &amp; D with expected accuracy in terms of both materials - Polymer & Metals</p>
-							</div>
-						</div>
-					</div>
-                    
-					<div class="col-md-4 col-xs-11 wow fadeInUp" data-wow-delay="0.6s">
-						<div class="media">
-							<div class="media-object media-left">
-								
-							</div>
-							<div class="media-body">
-								<h3 class="media-heading">Medical Services</h3>
-								<p>We are looking forward to print implants as well as organs to help human race withstand the modern implications</p>
-							</div>
-						</div>
-					</div>
-                    
-				</div>
-			</div>
-		</div>
-		<!-- end work -->
+<!-- start work -->
+	<div id="work" class="section">
+    <div class="container">
+        <h2>Products</h2>
+        <div class="row equal-height-row">
+            
+            <div class="col-md-6 col-xs-11 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="media">
+                    <div class="media-object media-left"></div>
+                    <div class="media-body">
+                        <h3 class="media-heading">SurgiCase</h3>
+                        <p>SurgiCase is a secure surgical case management that hosts as a repository for DICOM files. It empowers doctors and engineers to collaborate seamlessly, effectively plan for surgeries ensuring a HIPAA-compliant environment</p>
+                        <a href="#" class="btn btn-default wow fadeInUp" data-wow-delay="1s">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-xs-11 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="media">
+                    <div class="media-object media-left"></div>
+                    <div class="media-body">
+                        <h3 class="media-heading">SurgiCom</h3>
+                        <p>SurgiCom is a colloborative tool which streamlines the entire planning process, eliminates miscommunication, and empowers teams to create precise, patient-specific surgical solutions with total confidence</p>
+                        <a href="#" class="btn btn-default wow fadeInUp" data-wow-delay="1s">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end work -->
 
 		<!-- start about -->
 		<div id="about" class="section">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6 col-xs-11 wow fadeInLeft" data-wow-delay="0.9s">
-						<h2>ABOUT ADDITIV CORP.</h2><br/>
-						<img width="40%" height="40%" src="images/skmengg.png">
-						<h4>We are under SKM Groups</h4>
-						<p>We are under the roof of experienced “SKM Groups” which currently holds two companies : SKM Engg & 
-							SUNASUKA Developers Pvt. Ltd.
-						</p>
-					</div>
-					<div class="col-md-6 col-xs-11 wow fadeInRight" data-wow-delay="0.9s">
+					<h2>Services</h2><br/>
+					<div class="col-md-4 col-xs-11 wow fadeInLeft" data-wow-delay="0.9s">
 						
+						<h4>Anatomical Models</h4>
+						<p>3D Printed models help in visualisation of deformities and tumors. It facilitates surgical planning and helps in mock surgery
+						</p><br>
+						<a href="https://wetransfer.com?to=hello@additivcorp.co.in" target="_blank" class="btn btn-default wow fadeInUp" data-wow-delay="1s">Upload DICOM / STL</a>
+					</div>
+					<div class="col-md-4 col-xs-11 wow fadeInRight" data-wow-delay="0.9s">
+						<h4>Surgical Guides</h4>
+						<p>3D Printed surgical guides help in precise resection of deformities and tumors. Available in biocompatible ABS and Metal (Titanium Alloy)
+						</p><br>
+						<a href="https://wetransfer.com?to=hello@additivcorp.co.in" target="_blank" class="btn btn-default wow fadeInUp" data-wow-delay="1s">Upload DICOM / STL</a>
+					</div>
+					<div class="col-md-4 col-xs-11 wow fadeInRight" data-wow-delay="0.9s">
+						<h4>Titanium Alloy Implant</h4>
+						<p>We cater orthopedic implants, designed for better osseointegration, restored functionality, better aesthetics and reduced stress shielding
+						</p><br>
+						<a href="https://wetransfer.com?to=hello@additivcorp.co.in" target="_blank" class="btn btn-default wow fadeInUp" data-wow-delay="1s">Upload DICOM / STL</a>
 					</div>
 				</div>
 			</div>
@@ -145,50 +154,41 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h2 class="wow bounce">OUR EXPERTISE</h2>
+					<h2 class="wow bounce">EXPLORE</h2>
 				</div>
-				<div class="col-md-4 col-xs-6 wow fadeIn" data-wow-delay="0.6s">
+				<div class="col-md-6 col-xs-12 wow fadeIn" data-wow-delay="0.6s">
 					<div class="portfolio-thumb">
 						<img src="images/portfolio-img1.jpg" class="img-responsive" alt="portfolio img">
 							<div class="portfolio-overlay">
-								<h4>DfAM</h4>
-								<h5>Design for Additive Manufacturing</h5>
+								<h4>Virtual Models</h4>
+								<h5>Accurate Segmentation</h5>
 							</div>
 					</div>
 				</div>
-				<div class="col-md-4 col-xs-6 wow fadeIn" data-wow-delay="0.6s">
+				<div class="col-md-6 col-xs-12 wow fadeIn" data-wow-delay="0.6s">
 					<div class="portfolio-thumb">
 						<img src="images/portfolio-img2.jpg" class="img-responsive" alt="portfolio img">
 							<div class="portfolio-overlay">
-								<h4>Reverse Engineering</h4>
-								<h5>Mechanical & Medical</h5>
+								<h4>Anatomical Models</h4>
+								<h5>Visualize deformities and tumors</h5>
 							</div>
 					</div>
 				</div>
-				<div class="col-md-4 col-xs-6 wow fadeIn" data-wow-delay="0.6s">
+				<div class="col-md-6 col-xs-12 wow fadeIn" data-wow-delay="0.6s">
 					<div class="portfolio-thumb">
 						<img src="images/portfolio-img3.jpg" class="img-responsive" alt="portfolio img">
 							<div class="portfolio-overlay">
-								<h4>New Material Development</h4>
-								<h5>Metal & Polymers</h5>
+								<h4>Surgical Guides</h4>
+								<h5>Resect deformities and tumors</h5>
 							</div>
 					</div>
 				</div>
-				<div class="col-md-6 col-xs-6 wow fadeIn" data-wow-delay="0.6s">
+				<div class="col-md-6 col-xs-12 wow fadeIn" data-wow-delay="0.6s">
 					<div class="portfolio-thumb">
 						<img src="images/portfolio-img4.jpg" class="img-responsive" alt="portfolio img">
 							<div class="portfolio-overlay">
-								<h4>Metal 3D Printing</h4><br/>
-								
-							</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-xs-6 wow fadeIn" data-wow-delay="0.6s">
-					<div class="portfolio-thumb">
-						<img src="images/portfolio-img5.jpg" class="img-responsive" alt="portfolio img">
-							<div class="portfolio-overlay">
-								<h4>Polymer 3D Printing</h4><br/>
-								
+								<h4>Titanium Alloy Implants</h4>
+								<h5>Designed for better osseointegration and reduced stress shielding</h5>
 							</div>
 					</div>
 				</div>
@@ -196,6 +196,64 @@
 		</div>
 	</div>
 	<!-- end portfolio -->
+	 <div id="schedule" class="section">
+			<div class="container">
+				<div class="row">
+					<br><br>
+					<h2>Book now</h2><br><br>
+					<!-- Cal inline embed code begins -->
+					<div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-30min"></div>
+					<script type="text/javascript">
+					(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+					Cal("init", "30min", {origin:"https://app.cal.com"});
+					Cal.config = Cal.config || {};
+					Cal.config.forwardQueryParams = true;
+
+					Cal.ns["30min"]("inline", {
+						elementOrSelector:"#my-cal-inline-30min",
+						config: {"layout":"column_view","useSlotsViewOnSmallScreen":"true"},
+						calLink: "additivcorp/30min",
+					});
+
+					Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"column_view"});
+					</script>
+					<!-- Cal inline embed code ends --><br><br>
+			</div>
+		</div>
+
+		<div id="faq" class="section">
+			<div class="container">
+				<br><br>
+				<h2>Frequently asked questions</h2><br><br>
+				<div class="row" style="text-align: left;">
+				<h4 style="font-weight: 500;">Is there any protocol of CT/MRI Scans?</h4>
+				<p>We do recommend to follow the guidelines below<br><br>
+				Slice thickness<br>
+				Optimum: 0.5 mm<br>
+				Maximum: 1 mm<br><br>
+
+				Slice increment<br>
+				Optimum: 0.5 mm<br>
+				Maximum: 1 mm<br>
+				</p><br>
+
+				<h4>What is the price for printing the bone model?</h4>
+				<p>The price for printing a bone model can vary based on several factors. These factors include the size and complexity of the model, the type of 3D printing technology used, the material chosen for printing, Quantity and other additional costs such as post-processing and shipping.
+				</h5><br><br>
+
+				<h4>What is the time for delivery of 3D-printed plastic bone models and 3d printed titanium implants?</h4>
+				<p>The delivery time for 3D printed plastic bone models and 3D printed titanium implants can vary depending on several factors, including the complexity of the design, the specific 3D printing technology used, the material chosen and your location.<br><br>
+
+				<b>3D Printed Plastic Bone Models:</b><br>
+				The delivery time for 3D-printed plastic bone models can range from 3 to 5 days, but it can be shorter or longer based on the factors mentioned above.<br><br>
+
+				<b>3D Printed Titanium Implants:</b><br>
+				The delivery time for 3D-printed titanium implants can range from 5 to 7 days. Titanium implants typically require more specialized equipment and expertise due to the medical and regulatory considerations involved. The design, production, quality control and any necessary post-processing steps will contribute to the overall time.<br><br><br><br><br><br>
+				</h5>
+
+				</div>
+			</div>
+		</div>
 
 		<!-- start contact -->
 		<div id="contact" class="section">
@@ -204,9 +262,9 @@
 					<div class="col-lg-5 col-lg-offset-1 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
 						<address>
 							<p class="contact-title">CONTACT US</p>
-							<p><i class="fa fa-phone"></i> +91-8667449954</p>
-							<p><i class="fa fa-envelope-o"></i> hello@additivcorp.co.in</p>
-							<p><i class="fa fa-map-marker"></i> Thanjavur & Mumbai</p>
+							<p class="contact-item"><i class="fa fa-phone"></i> <span>+91-8667449954</span></p>
+							<p class="contact-item"><i class="fa fa-mail-forward"></i> <span><a href="mailto:hello@additivcorp.co.in">hello@additivcorp.co.in</a></span></p>
+							<p class="contact-item"><i class="fa fa-map-marker"></i> <span>VO775, 13th Floor, Embassy 247 Park, Vikhroli West, Mumbai - 400083</span></p>
 						</address>
 					</div>
 					<div class="col-lg-6 col-md-6 col-xs-10 wow fadeInUp" data-wow-delay="0.6s">
@@ -228,14 +286,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 wow fadeIn" data-wow-delay="0.9s">
-						<p>Copyright &copy; 2025 Additiv Corp. 
-                        
-                       
-						<hr>
-						<ul class="social-icon">
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-twitter"></a></li>
-							<li><a href="#" class="fa fa-instagram"></a></li>
+						<p>Copyright &copy; 2026 Additiv Corp. 
+						<ul>
+							<li><a href="https://x.com/additivcorp" target="_blank" class="fa fa-twitter"></a></li>
+							<li><a href="https://www.instagram.com/additiv.corp" target="_blank" class="fa fa-instagram"></a></li>
 						</ul>
 					</div>
 				</div>
@@ -250,7 +304,7 @@
 		<!-- bootstrap -->
 		<script src="js/bootstrap.min.js"></script>
 		<!-- fullpage -->
-		<script src="js/jquery.fullPage.js"></script>
+		<!--<script src="js/jquery.fullPage.js"></script>-->
 		<!-- smoothScroll -->
 		<script src="js/smoothscroll.js"></script>
 		<!-- wow -->

@@ -5,6 +5,10 @@ Lavish HTML CSS Template
 https://templatemo.com/tm-458-lavish
 		
 */
+html
+{
+    scroll-behavior: smooth;
+}
 
 body
 {
@@ -16,33 +20,15 @@ body
 }
 
 /* start all section */
-#home,
-#home .fp-slide,
-#home .fp-tableCell,
-
-#work,
-#work .fp-slide,
-#work .fp-tableCell,
-
-#about,
-#about .fp-slide,
-#about .fp-tableCell,
-
-#contact,
-#contact .fp-slide,
-#contact .fp-tableCell,
-
-#portfolio,
-#portfolio .fp-slide,
-#portfolio .fp-tableCell,
-
-footer,
-footer .fp-slide,
-footer .fp-tableCell
+#home, #home .fp-slide, #home .fp-tableCell,
+#work, #work .fp-slide, #work .fp-tableCell,
+#about, #about .fp-slide, #about .fp-tableCell,
+#contact, #contact .fp-slide, #contact .fp-tableCell,
+#portfolio, #portfolio .fp-slide, #portfolio .fp-tableCell,
+footer, footer .fp-slide, footer .fp-tableCell
 {
     height: auto !important;
 }
-
 /* end all section */
 
 /* start all heading */
@@ -54,11 +40,17 @@ h1,h2,h3,h4,h5
 /* end all heading */
 
 /* start all section */
-#work, #about, #portfolio, #contact
+#work, #about, #portfolio
     {
         padding-top: 100px;
         padding-bottom: 120px;
     }
+
+#contact
+{
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
 /* end all section */
 
 /* start simpletextrotator */
@@ -208,6 +200,7 @@ h1,h2,h3,h4,h5
     {
         background: rgb(0, 0, 0);
         border-color: transparent;
+        text-decoration: none;
     }
 /* end home */
 
@@ -218,7 +211,7 @@ h1,h2,h3,h4,h5
     }
 #work h2
     {
-        text-align: center;
+        text-align: left;
     }
 
 #work .media
@@ -244,6 +237,7 @@ h1,h2,h3,h4,h5
     {
         background: #ffffff;
         cursor: pointer;
+        text-decoration: none;
     }
 #work .media .media-heading
     {
@@ -303,29 +297,46 @@ h1,h2,h3,h4,h5
         position: relative;
         margin-bottom: 30px;
     }
-#portfolio .portfolio-thumb .portfolio-overlay
-    {
-        background: rgb(0, 0, 0);
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        padding-top: 60px;
-        transition: all 0.4s ease-in-out;
-    }
-#portfolio .portfolio-thumb:hover .portfolio-overlay
-    {
-        cursor: pointer;
-        opacity: 0.8;
-        transform: scale(0.9);
-    }
+#portfolio .portfolio-thumb .portfolio-overlay {
+    background: rgb(0, 0, 0);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    
+    /* Flexbox centering properties */
+    display: flex;
+    flex-direction: column; /* Keeps multiple lines/elements stacked vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally (optional, but usually desired) */
+    text-align: center; /* Ensures the text itself is center-aligned */
+    
+    /* padding-top: 60px; <-- REMOVED so it doesn't offset the true center */
+}
+
+#portfolio .portfolio-thumb:hover .portfolio-overlay {
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(0.9);
+}
 /* end portfolio */
 
 /* start contact */
+#contact a {
+    color: #999; /* Matches your default body text color */
+    text-decoration: none; /* Removes any underline if it appears */
+    transition: all 0.4s ease-in-out; /* Keeps the transition smooth */
+}
+
+#contact a:hover {
+    color: #ffffff; /* Makes it turn white when a user hovers over it */
+    text-decoration: none;
+}
 
 #contact address
     {
@@ -396,25 +407,128 @@ footer hr
 .social-icon
     {
         position: relative;
-        padding: 0;
-        margin: 0;
+        padding: 10px;
+        margin: 10px;
+        color: #ffffff;
     }
 .social-icon li
     {
         display: inline-block;
         list-style: none;
+        color: #ffffff;
     }
-.social-icon li a
-    {
-        border-radius: 50%;
-        color: #606060;
-        text-decoration: none;
-        transition: all 0.4s ease-in-out;
-        text-align: center;
-        margin-right: 10px;
-    }
+.social-icon li a {
+    display: inline-block; /* Allows width, height, and perfect shaping */
+    width: 40px; 
+    height: 40px;          /* Set a fixed width */
+  /* Vertically centers the icon inside the circle */
+  color: #ffffff;
+
+    
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    margin-right: 10px;
+}
 .social-icon li a:hover
     {
         color: #D43F52;
     }
+
+.contact-item {
+  display: flex;
+  align-items: center;    /* Keeps the icon and text perfectly centered on a single line */
+  margin-bottom: 20px;    /* Adds uniform breathing room between contact rows */
+}
+
+.contact-item i {
+  width: 45px;            /* Matches the width/height profile of your circular border elements */
+  height: 45px;           /* Ensures a true circle container */
+  line-height: 45px;      /* Centers the inner icon glyph vertically inside the circle */
+  border: 2px solid #fff; /* Recreates the white circle border from your image */
+  border-radius: 50%;     /* Makes it a perfect circle */
+  text-align: center;     /* Centers the inner icon glyph horizontally */
+  flex-shrink: 0;         /* Guarantees the circle won't distort or shrink */
+}
+
+.contact-item span {
+  padding-left: 20px;     /* Gives clean, consistent horizontal spacing after the circle */
+  margin: 0;              /* CRITICAL: Resets any default browser paragraph margins lifting text up */
+  display: inline-block;
+}
 /* end social icon */
+
+/* Ensures the row acts as a flexbox container, making columns equal height */
+.equal-height-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Forces the media container to take up the full height of the column */
+.equal-height-row .media {
+    display: flex;
+    height: 100%;
+}
+
+/* Turns the body into a flex column */
+.equal-height-row .media-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Pushes the button to the bottom and prevents it from stretching full-width */
+.equal-height-row .media-body .btn {
+    margin-top: auto; 
+    align-self: flex-start; 
+}
+
+/* Optional: Adds consistent spacing below the title and paragraph instead of using <br> tags */
+.equal-height-row .media-heading {
+    margin-top: 45px;
+    margin-bottom: 15px;
+}
+
+.equal-height-row .media-body p {
+    margin-bottom: 25px;
+}
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Contact Button */
+.btn-contact {
+  background-color: #ffffff; /* Lighter green */
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-contact:hover {
+  background-color: #777777; /* Slightly darker on hover */
+  text-decoration: none;
+}
+
+#faq
+    {
+        background: #1a1a1a;
+        text-align: center;
+    }
+
+@media (max-width: 890px) {
+    .row .container {
+        /* Add your desired padding here */
+        padding: 20px;
+    }
+
+    
+}
