@@ -403,37 +403,10 @@ footer hr
     }
 /* end footer */
 
-/* start social icon */
-.social-icon
-    {
-        position: relative;
-        padding: 10px;
-        margin: 10px;
-        color: #ffffff;
-    }
-.social-icon li
-    {
-        display: inline-block;
-        list-style: none;
-        color: #ffffff;
-    }
-.social-icon li a {
-    display: inline-block; /* Allows width, height, and perfect shaping */
-    width: 40px; 
-    height: 40px;          /* Set a fixed width */
-  /* Vertically centers the icon inside the circle */
-  color: #ffffff;
-
-    
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.4s ease-in-out;
-    margin-right: 10px;
+.social .ul .fa
+{
+    color: #ffffff;
 }
-.social-icon li a:hover
-    {
-        color: #D43F52;
-    }
 
 .contact-item {
   display: flex;

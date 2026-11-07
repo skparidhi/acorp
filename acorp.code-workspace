@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../mymatrix"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "acorp"
+	}
+}
