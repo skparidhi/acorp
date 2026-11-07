@@ -62,7 +62,7 @@
                  aria-label="3D model of a hip, made from a CT scan. Drag or use the arrow keys to rotate; double-click or press Home to reset.">
               <svg class="hero3d-ring" viewBox="0 0 600 600" aria-hidden="true">
                 <defs><path id="ring-path" d="M300,300 m-262,0 a262,262 0 1,1 524,0 a262,262 0 1,1 -524,0"/></defs>
-                <text><textPath href="#ring-path" textLength="1630" lengthAdjust="spacing">ADDITIV CORP · PATIENT-SPECIFIC HIP MODEL · FROM CT SCAN ·</textPath></text>
+                <text><textPath href="#ring-path" textLength="1630" lengthAdjust="spacing">ADDITIV CORP · ANATOMICAL MODELS · GUIDES · IMPLANTS ·</textPath></text>
               </svg>
             </div>
             <p class="hero3d-hint">Drag to rotate</p>
@@ -209,7 +209,6 @@
                 <tr><th scope="row">Slice increment</th><td>0.5 mm</td><td>1 mm</td></tr>
               </tbody>
             </table>
-            <a class="link link-sm" href="download/Additiv%20Corp%20Brochure.pdf" download>Download the brochure (PDF)</a>
           </div>
           <div class="faq">
             <details open>
@@ -241,21 +240,10 @@
           <h2>Talk to an engineer.</h2>
           <p class="sub">Book a 30-minute call, or write to us and we’ll reply within one working day.</p>
         </header>
-        <div class="contact-cards">
-          <div class="card booking" id="schedule">
-            <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>30-minute call</h3>
-            <div class="cal" id="cal-30min" aria-label="Booking calendar"><p class="cal-loading">Loading available times…</p></div>
-            <p class="note">Times in India Standard Time. Scheduling by Cal.com. <a href="https://cal.com/additivcorp/30min" target="_blank" rel="noopener">Open in a new tab</a></p>
-          </div>
-          <form class="card contact-form" id="contact-form" novalidate>
-            <h3>Write to us</h3>
-            <label>Name<input name="name" type="text" autocomplete="name" placeholder="Dr. Jane Doe" required></label>
-            <label>Email<input name="email" type="email" autocomplete="email" placeholder="you@hospital.org" required></label>
-            <label>Message<textarea name="message" rows="4" placeholder="Tell us about the case…" required></textarea></label>
-            <p class="form-error" role="alert" hidden></p>
-            <button class="btn btn-primary" type="submit">Send message</button>
-            <p class="note">Opens your email app with the message ready to send to hello@additivcorp.co.in.</p>
-          </form>
+        <!-- Cal.com booking; loaded by js/site.js when the section is near. #schedule keeps old links working. -->
+        <div class="cal" id="schedule">
+          <div id="my-cal-inline-30min" aria-label="Book a 30-minute call"></div>
+          <noscript><p><a href="https://cal.com/additivcorp/30min">Book a 30-minute call on Cal.com</a></p></noscript>
         </div>
         <ul class="contact-details">
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg><a href="tel:+918667449954">+91 86674 49954</a></li>
@@ -270,7 +258,6 @@
     <div class="wrap footer-inner">
       <p class="copy"><img src="images/additiv-logo.png" alt="" width="20" height="20">© 2026 Additiv Corp.</p>
       <nav aria-label="Footer">
-        <a href="download/Additiv%20Corp%20Brochure.pdf" download>Brochure (PDF)</a>
         <a href="https://www.instagram.com/additiv.corp" target="_blank" rel="noopener">Instagram</a>
         <a href="https://x.com/additivcorp" target="_blank" rel="noopener">X</a>
       </nav>

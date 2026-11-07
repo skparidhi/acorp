@@ -126,23 +126,9 @@ tbody tr { box-shadow: inset 0 1px 0 var(--line); }
 .answer p { padding-bottom: 24px; color: var(--ink-2); line-height: 1.55; }
 
 /* ---- contact -------------------------------------------------------------- */
-.contact-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.booking, .contact-form { display: flex; flex-direction: column; gap: 16px; }
-.booking h3 { display: flex; align-items: center; gap: 10px; }
-.booking h3 svg { color: var(--primary); }
-.cal { flex: 1; min-height: 460px; border-radius: 16px; overflow: hidden auto; background: var(--bg); }
-.cal-loading { padding: 24px; color: var(--ink-3); }
-.note { color: var(--ink-3); font-size: 0.8125rem; }
-.note a { color: var(--ink-2); }
-.contact-form label { display: grid; gap: 6px; color: var(--ink-2); font-weight: 500; font-size: 0.8125rem; }
-.contact-form input, .contact-form textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg);
-  color: var(--ink); font: 400 1rem/1.3 inherit; font-family: inherit; transition: border-color 150ms ease, box-shadow 150ms ease; }
-.contact-form textarea { resize: vertical; min-height: 116px; }
-.contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--ink-3); }
-.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(91, 141, 239, 0.2); background: var(--panel); }
-.contact-form [aria-invalid="true"] { border-color: #e5484d; }
-.form-error { color: #c4373c; font-size: 0.875rem; }
-.contact-form .btn { margin-top: auto; }
+/* The Cal.com embed sizes its own iframe; reserve space so the page doesn't jump when it loads. */
+.cal { min-height: 540px; }
+.cal noscript a { color: var(--primary-ink); }
 .contact-details { list-style: none; margin: 32px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 16px 40px; color: var(--ink-2); font-size: 0.9375rem; }
 .contact-details li { display: flex; align-items: center; gap: 10px; }
 .contact-details a { text-decoration: none; }
@@ -225,8 +211,7 @@ tbody tr { box-shadow: inset 0 1px 0 var(--line); }
   th, td { padding: 12px 14px; font-size: 0.9375rem; }
   .faq summary { font-size: 1.0625rem; padding: 20px 0; }
 
-  .contact-cards { grid-template-columns: 1fr; gap: 12px; }
-  .cal { min-height: 520px; }
+  .cal { min-height: 600px; }
   .contact-details { flex-direction: column; gap: 12px; }
   .contact-details li { align-items: flex-start; }
 

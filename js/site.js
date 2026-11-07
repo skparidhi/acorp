@@ -1,4 +1,4 @@
-// Site behaviour: menu, 3D hero, FAQ, booking embed, contact form, phone action bar, reveals.
+// Site behaviour: menu, 3D hero, FAQ, booking embed, phone action bar, reveals.
 import { mountAll } from './hero3d.js';
 
 document.documentElement.classList.add('js');
@@ -51,44 +51,23 @@ document.querySelectorAll('.faq details').forEach((d) => {
 });
 
 // ---- booking: load the Cal.com embed only when the section is near ------------------
-const calEl = document.getElementById('cal-30min');
+const calEl = document.getElementById('my-cal-inline-30min');
 if (calEl) {
   const io = new IntersectionObserver((entries) => {
     if (!entries.some((e) => e.isIntersecting)) return;
     io.disconnect();
     (function (C, A, L) { const p = function (a, ar) { a.q.push(ar); }; const d = C.document; C.Cal = C.Cal || function () { const cal = C.Cal; const ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === 'string') { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
     Cal('init', '30min', { origin: 'https://app.cal.com' });
-    calEl.innerHTML = '';
-    Cal.ns['30min']('inline', { elementOrSelector: '#cal-30min', calLink: 'additivcorp/30min', config: { layout: 'month_view', theme: 'light' } });
-    Cal.ns['30min']('ui', { hideEventTypeDetails: true, layout: 'month_view', cssVarsPerTheme: { light: { 'cal-brand': '#1f2430' } } });
-  }, { rootMargin: '600px' });
+    Cal.config = Cal.config || {};
+    Cal.config.forwardQueryParams = true;
+    Cal.ns['30min']('inline', {
+      elementOrSelector: '#my-cal-inline-30min',
+      config: { layout: 'month_view', useSlotsViewOnSmallScreen: 'true', theme: 'light' },
+      calLink: 'additivcorp/30min',
+    });
+    Cal.ns['30min']('ui', { theme: 'light', hideEventTypeDetails: false, layout: 'month_view' });
+  }, { rootMargin: '800px' });
   io.observe(calEl);
-}
-
-// ---- contact form: validate inline, then hand off to the visitor's email app ----------
-const form = document.getElementById('contact-form');
-if (form) {
-  const error = form.querySelector('.form-error');
-  const check = (field) => {
-    const ok = field.value.trim() !== '' && field.checkValidity();
-    field.setAttribute('aria-invalid', String(!ok));
-    return ok;
-  };
-  form.querySelectorAll('input, textarea').forEach((f) => f.addEventListener('blur', () => { if (f.value) check(f); }));
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const fields = [...form.querySelectorAll('input, textarea')];
-    const bad = fields.filter((f) => !check(f));
-    if (bad.length) {
-      error.textContent = bad[0].name === 'email' && bad[0].value ? 'Please enter a valid email address.' : 'Please fill in your name, email and message.';
-      error.hidden = false; bad[0].focus(); return;
-    }
-    error.hidden = true;
-    const { name, email, message } = Object.fromEntries(new FormData(form));
-    const subject = `Enquiry from ${name}`;
-    const body = `${message}\n\n— ${name}\n${email}`;
-    location.href = `mailto:hello@additivcorp.co.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  });
 }
 
 // ---- phone action bar: appears once the hero buttons scroll away ---------------------
@@ -108,7 +87,7 @@ if (bar && heroActions) {
 }
 
 // ---- gentle reveal of cards as they enter ------------------------------------------
-const revealables = document.querySelectorAll('.heading, .step, .service, .product, .gallery figure, .protocol, .faq, .booking, .contact-form');
+const revealables = document.querySelectorAll('.heading, .step, .service, .product, .gallery figure, .protocol, .faq');
 const rv = new IntersectionObserver((entries) => {
   for (const e of entries) if (e.isIntersecting) { e.target.classList.add('is-in'); rv.unobserve(e.target); }
 }, { rootMargin: '0px 0px -8% 0px' });
