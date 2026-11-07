@@ -131,18 +131,22 @@ tbody tr { box-shadow: inset 0 1px 0 var(--line); }
    Cal centres its 1040px booker inside the iframe, so cap the width to keep it left-aligned with the heading. */
 .cal { min-height: 540px; max-width: 1040px; }
 .cal noscript a { color: var(--primary-ink); }
-.contact-details { list-style: none; margin: 32px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 16px 40px; color: var(--ink-2); font-size: 0.9375rem; }
-.contact-details li { display: flex; align-items: center; gap: 10px; }
-.contact-details a { text-decoration: none; }
-.contact-details a:hover { color: var(--ink); text-decoration: underline; }
-
 /* ---- footer ------------------------------------------------------------------ */
-.footer { background: var(--bg); box-shadow: inset 0 1px 0 var(--line); padding: 32px 0 40px; font-size: 0.8125rem; }
-.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.copy { display: flex; align-items: center; gap: 10px; color: var(--ink-3); }
-.footer nav { display: flex; gap: 28px; }
-.footer nav a { color: var(--ink-2); text-decoration: none; }
-.footer nav a:hover { color: var(--ink); }
+.footer { background: var(--bg); box-shadow: inset 0 1px 0 var(--line); padding: 64px 0 32px; color: var(--ink-2); font-size: 0.875rem; }
+.footer-col a, .footer-bottom a { color: inherit; text-decoration: none; transition: color 150ms ease; }
+.footer-col a:hover, .footer-bottom a:hover { color: var(--ink); }
+.footer-top { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr) minmax(0, 1.3fr) minmax(0, 0.7fr); gap: 40px; padding-bottom: 48px; }
+.footer-brand { display: grid; justify-items: start; align-content: start; gap: 16px; max-width: 340px; }
+.footer-logo { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-size: 1.125rem; font-weight: 600; letter-spacing: -0.015em; }
+.footer-brand p { margin: 0; line-height: 1.55; }
+.footer-col h2 { margin: 0 0 16px; color: var(--ink); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0; }
+.footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.contact-details li { display: grid; grid-template-columns: 16px 1fr; align-items: start; gap: 10px; }
+.contact-details svg { margin-top: 2px; color: var(--ink-3); }
+.contact-details address { font-style: normal; line-height: 1.5; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 24px; box-shadow: inset 0 1px 0 var(--line); color: var(--ink-3); font-size: 0.8125rem; }
+.footer-bottom p { margin: 0; }
+.footer-bottom a { display: inline-flex; align-items: center; gap: 6px; }
 
 /* ---- phone action bar --------------------------------------------------------- */
 .action-bar { display: none; }
@@ -152,6 +156,13 @@ tbody tr { box-shadow: inset 0 1px 0 var(--line); }
 .js .reveal.is-in { opacity: 1; transform: none; }
 
 /* ---- tablet ------------------------------------------------------------------- */
+/* ---- supported by ------------------------------------------------------------ */
+.support { padding: 88px 0 96px; }
+.support-title { margin: 0 0 44px; text-align: center; color: var(--ink-2); font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.01em; }
+.support-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 40px 80px; list-style: none; margin: 0; padding: 0; }
+.support-logos img { display: block; width: auto; height: 80px; }
+.support-logos img.wide { height: 52px; }
+
 @media (max-width: 1100px) {
   .nav-inner { padding: 0 var(--gutter); }
   .nav-links { gap: 22px; }
@@ -193,6 +204,13 @@ tbody tr { box-shadow: inset 0 1px 0 var(--line); }
   .facts strong { font-size: 1.25rem; letter-spacing: -0.02em; }
   .facts > div > span { font-size: 0.75rem; }
 
+  .support { padding: 56px 0 64px; }
+  .support-title { margin-bottom: 32px; font-size: 0.9375rem; }
+  .support-logos { display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center; gap: 32px 12px; }
+  .support-logos img { height: 60px; }
+  .support-logos li:has(.wide) { grid-column: 1 / -1; order: 1; justify-self: stretch; display: flex; justify-content: center; }
+  .support-logos img.wide { height: auto; width: min(100%, 220px); }
+
   .steps { grid-template-columns: 1fr; gap: 12px; }
   .step { grid-template-columns: 32px 1fr; column-gap: 16px; row-gap: 6px; padding: 20px; border-radius: 20px; }
   .step .num { grid-row: span 2; }
@@ -217,12 +235,12 @@ tbody tr { box-shadow: inset 0 1px 0 var(--line); }
   .faq summary { font-size: 1.0625rem; padding: 20px 0; }
 
   .cal { min-height: 600px; }
-  .contact-details { flex-direction: column; gap: 12px; }
-  .contact-details li { align-items: flex-start; }
 
   .footer { padding-bottom: calc(32px + env(safe-area-inset-bottom)); }
-  .footer-inner { flex-direction: column-reverse; align-items: flex-start; }
-  .footer nav { gap: 20px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 36px 24px; padding-bottom: 36px; }
+  .footer-brand, .footer-col:nth-child(3) { grid-column: 1 / -1; }
+  .footer-col:nth-child(3) { order: 1; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
 
   .action-bar { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
     padding: 12px 16px calc(12px + env(safe-area-inset-bottom));

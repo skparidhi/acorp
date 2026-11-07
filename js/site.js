@@ -19,13 +19,13 @@ const setMenu = (open) => {
 menuBtn.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
 nav.querySelectorAll('.nav-links a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
 
-// Logo returns to the top (smoothly unless reduced motion) and clears the #hash.
-nav.querySelector('.brand').addEventListener('click', (e) => {
+// Logo and footer "Back to top" return to the top (smoothly unless reduced motion) and clears the #hash.
+document.querySelectorAll('.brand, [data-to-top]').forEach((el) => el.addEventListener('click', (e) => {
   e.preventDefault();
   setMenu(false);
   window.scrollTo({ top: 0, behavior: reduced.matches ? 'auto' : 'smooth' });
   history.replaceState(null, '', location.pathname + location.search);
-});
+}));
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 document.addEventListener('click', (e) => { if (!nav.contains(e.target)) setMenu(false); });
 
