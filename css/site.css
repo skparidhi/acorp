@@ -99,7 +99,7 @@ h3 { font-weight: 600; font-size: 1.5rem; line-height: 1.2; letter-spacing: -0.0
 .status { padding: 6px 12px; border-radius: 999px; background: var(--bg); box-shadow: inset 0 0 0 1px var(--line); color: var(--ink-2); font-weight: 500; font-size: 0.8125rem; }
 
 .gallery { grid-template-columns: repeat(2, 1fr); gap: 48px 24px; }
-.gallery figure { margin: 0; display: grid; gap: 14px; }
+.gallery figure { margin: 0; display: grid; gap: 14px; align-content: start; }   /* start: equal-height cards must not spread their rows */
 .gallery img { aspect-ratio: 3 / 2; object-fit: cover; border-radius: 24px; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08); }
 .gallery figcaption { display: grid; gap: 4px; }
 .gallery strong { font-weight: 600; font-size: 1.375rem; letter-spacing: -0.01em; }
@@ -216,7 +216,7 @@ tbody tr { box-shadow: inset 0 1px 0 var(--line); }
   .contact-details { flex-direction: column; gap: 12px; }
   .contact-details li { align-items: flex-start; }
 
-  .footer { padding-bottom: calc(112px + env(safe-area-inset-bottom)); }
+  .footer { padding-bottom: calc(32px + env(safe-area-inset-bottom)); }
   .footer-inner { flex-direction: column-reverse; align-items: flex-start; }
   .footer nav { gap: 20px; }
 

@@ -18,6 +18,14 @@ const setMenu = (open) => {
 };
 menuBtn.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
 nav.querySelectorAll('.nav-links a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+
+// Logo returns to the top (smoothly unless reduced motion) and clears the #hash.
+nav.querySelector('.brand').addEventListener('click', (e) => {
+  e.preventDefault();
+  setMenu(false);
+  window.scrollTo({ top: 0, behavior: reduced.matches ? 'auto' : 'smooth' });
+  history.replaceState(null, '', location.pathname + location.search);
+});
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 document.addEventListener('click', (e) => { if (!nav.contains(e.target)) setMenu(false); });
 
@@ -83,7 +91,13 @@ if (bar && heroActions) {
     bar.querySelector('a').tabIndex = show ? 0 : -1;
   };
   new IntersectionObserver(([e]) => { heroGone = !e.isIntersecting && e.boundingClientRect.top < 0; update(); }).observe(heroActions);
-  new IntersectionObserver(([e]) => { atContact = e.isIntersecting; update(); }, { rootMargin: '0px 0px -30% 0px' }).observe(contact);
+  // hidden from the contact section down, so the footer needs no space reserved for it
+  const endZone = new Set();
+  new IntersectionObserver((entries) => {
+    for (const e of entries) e.isIntersecting ? endZone.add(e.target) : endZone.delete(e.target);
+    atContact = endZone.size > 0; update();
+  }, { rootMargin: '0px 0px -30% 0px' }).observe(contact);
+  new IntersectionObserver(([e]) => { e.isIntersecting ? endZone.add(e.target) : endZone.delete(e.target); atContact = endZone.size > 0; update(); }).observe(document.querySelector('.footer'));
 }
 
 // ---- gentle reveal of cards as they enter ------------------------------------------
