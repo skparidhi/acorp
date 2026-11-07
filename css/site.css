@@ -126,8 +126,9 @@ tbody tr { box-shadow: inset 0 1px 0 var(--line); }
 .answer p { padding-bottom: 24px; color: var(--ink-2); line-height: 1.55; }
 
 /* ---- contact -------------------------------------------------------------- */
-/* The Cal.com embed sizes its own iframe; reserve space so the page doesn't jump when it loads. */
-.cal { min-height: 540px; }
+/* The Cal.com embed sizes its own iframe; reserve space so the page doesn't jump when it loads.
+   Cal centres its 1040px booker inside the iframe, so cap the width to keep it left-aligned with the heading. */
+.cal { min-height: 540px; max-width: 1040px; }
 .cal noscript a { color: var(--primary-ink); }
 .contact-details { list-style: none; margin: 32px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 16px 40px; color: var(--ink-2); font-size: 0.9375rem; }
 .contact-details li { display: flex; align-items: center; gap: 10px; }
